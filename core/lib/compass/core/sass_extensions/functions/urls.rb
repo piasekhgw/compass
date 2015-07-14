@@ -145,7 +145,7 @@ module Compass::Core::SassExtensions::Functions::Urls
       end
 
       if Compass.configuration.use_image_helper_on_output
-        path = "<%= image_path('#{path}') %>"
+        path = "<%= image_path('#{path.gsub(/^\//, '')}') %>"
       end
 
       # Compute the asset host unless in relative mode.
